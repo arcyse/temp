@@ -11,7 +11,7 @@ export const CONFIG = {
     position: { x: 0, y: 0, z: 3 },
   },
   blob: {
-    radius: 0.75,
+    radius: 1.0,
     widthSegments: 128,
     heightSegments: 128,
     noiseScale: 0.5,
@@ -31,7 +31,7 @@ export const CONFIG = {
 };
 
 export const STAR_CONFIG = {
-  starCount: 350,
+  starCount: 200,
   minSize: 0.2,
   maxSize: 1.5,
   minOpacity: 0.3,
@@ -41,5 +41,5 @@ export const STAR_CONFIG = {
   parabolicScale: 0.8,
   fillHeight: 1.8,
   warpStrength: 900,
-  warpRadiusFactor: 1.3   // 1.0 = exactly blob radius, >1 = extend beyond
+  warpRadiusFactor: 1.3
 };
