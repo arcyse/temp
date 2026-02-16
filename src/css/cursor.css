@@ -1,0 +1,18 @@
+.custom-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 9999;
+  will-change: transform;
+  filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #fff);
+}
+
+.custom-cursor svg {
+  width: 25px;
+  height: 25px;
+  display: block;
+}

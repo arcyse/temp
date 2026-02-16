@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <link rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 110'><polygon points='50,5 95,100 5,100' fill='darkgray'/><polygon points='53,4 150,50 100,100' fill='white'/></svg>"
+      type="image/svg+xml"
+      sizes="any">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="src/css/base.css">
+  <link rel="stylesheet" href="src/css/cursor.css">
+  <link rel="stylesheet" href="src/css/canvas.css">
+  <link rel="stylesheet" href="src/css/hero-text.css">
+</head>
+<body>
+  <div class="custom-cursor">
+    <svg viewBox="0 0 150 110" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="50,5 95,100 5,100" fill="darkgray" />
+      <polygon points="53,4 150,50 100,100" fill="white" />
+    </svg>
+  </div>
+
+  <canvas id="main-canvas"></canvas>
+  <canvas id="starfield"></canvas>
+
+  <!-- GSAP Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  
+  <script src="vendor/three.min.js"></script>
+  <script type="module" src="src/js/main.js"></script>
+</body>
+</html>

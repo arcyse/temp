@@ -1,0 +1,14 @@
+:root {
+  --cursor-triangle: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 110' width='32' height='32'><defs><filter id='bloom' x='-50%' y='-50%' width='200%' height='200%'><feGaussianBlur in='SourceGraphic' stdDeviation='4' result='blur'/><feMerge><feMergeNode in='blur'/><feMergeNode in='SourceGraphic'/></feMerge></filter></defs><g filter='url(#bloom)'><polygon points='50,5 95,100 5,100' fill='white'/><polygon points='53,4 150,50 100,100' fill='black'/></g></svg>") 4 16, auto;
+}
+
+html {
+  cursor: none; /* hide system cursor */
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
