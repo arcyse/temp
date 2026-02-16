@@ -2,13 +2,112 @@
   --cursor-triangle: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 110' width='32' height='32'><defs><filter id='bloom' x='-50%' y='-50%' width='200%' height='200%'><feGaussianBlur in='SourceGraphic' stdDeviation='4' result='blur'/><feMerge><feMergeNode in='blur'/><feMergeNode in='SourceGraphic'/></feMerge></filter></defs><g filter='url(#bloom)'><polygon points='50,5 95,100 5,100' fill='white'/><polygon points='53,4 150,50 100,100' fill='black'/></g></svg>") 4 16, auto;
 }
 
+/* Custom Font Faces */
+
+/* Marlin - Regular weight */
+@font-face {
+  font-family: 'Marlin';
+  src: url('/fonts/marlin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Marlin Soft - ExtraBold (800) */
+@font-face {
+  font-family: 'MarlinSoftSQ';
+  src: url('/fonts/MarlinSoftSQ-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Marlin Soft - ExtraBold Italic */
+@font-face {
+  font-family: 'MarlinSoftSQ';
+  src: url('/fonts/MarlinSoftSQ-ExtraBoldItalic.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Marlin Soft - Medium (500) */
+@font-face {
+  font-family: 'MarlinSoftSQ';
+  src: url('/fonts/MarlinSoftSQ-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ABC Favorit Mono - Bold */
+@font-face {
+  font-family: 'ABCFavoritMono';
+  src: url('/fonts/ABCFavoritMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ABC Favorit Mono - Regular */
+@font-face {
+  font-family: 'ABCFavoritMono';
+  src: url('/fonts/ABCFavoritMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter - Variable font supporting weights 100-900 */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-var-latin.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+
+1. Marlin (regular):
+   font-family: 'Marlin', sans-serif;
+   font-weight: 400;
+
+2. Marlin Soft ExtraBold:
+   font-family: 'MarlinSoftSQ', sans-serif;
+   font-weight: 800;
+   
+3. Marlin Soft ExtraBold Italic:
+   font-family: 'MarlinSoftSQ', sans-serif;
+   font-weight: 800;
+   font-style: italic;
+
+4. Marlin Soft Medium:
+   font-family: 'MarlinSoftSQ', sans-serif;
+   font-weight: 500;
+
+5. ABC Favorit Mono Bold:
+   font-family: 'ABCFavoritMono', monospace;
+   font-weight: 700;
+
+6. ABC Favorit Mono Regular:
+   font-family: 'ABCFavoritMono', monospace;
+   font-weight: 400;
+
+7. Inter (any weight from 100-900):
+   font-family: 'Inter', sans-serif;
+   font-weight: 300; (or any value 100-900)
+*/
+
 html {
   cursor: none; /* hide system cursor */
 }
 
 body {
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: #000;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #fff;
 }
