@@ -68,7 +68,6 @@
 }
 
 /*
-
 1. Marlin (regular):
    font-family: 'Marlin', sans-serif;
    font-weight: 400;
@@ -110,4 +109,5 @@ body {
   background: #000;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: #fff;
+  scroll-behavior: smooth;
 }

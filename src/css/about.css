@@ -1,0 +1,115 @@
+.about-section {
+  position: relative;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  padding: 8rem 3rem;
+  z-index: 10;
+  background: transparent;
+}
+
+.about-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 8rem;
+  align-items: start;
+}
+
+.about-heading {
+  position: sticky;
+  top: 12rem;
+}
+
+.about-heading h2 {
+  font-family: 'MarlinSoftSQ', sans-serif;
+  font-weight: 800;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: transparent;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2));
+}
+
+.about-content {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.about-content p:first-child {
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Shader divider container */
+.shader-divider {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.shader-divider canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .about-heading {
+    position: relative;
+    top: 0;
+  }
+  
+  .about-heading h2 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 6rem 1.5rem;
+  }
+  
+  .about-container {
+    gap: 2rem;
+  }
+  
+  .about-content p {
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+  }
+  
+  .shader-divider {
+    height: 6px;
+  }
+}
