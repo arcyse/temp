@@ -1,9 +1,10 @@
-import { STAR_CONFIG } from './config.js';
+import { STAR_CONFIG, CONFIG, getWarpRadiusFactor } from './config.js';
 
 export function initStarfield() {
   const starCanvas = document.getElementById('starfield');
   const starCtx = starCanvas.getContext('2d');
   let starW, starH;
+  let scrollFade = 1.0;
 
   function resizeStarfield() {
     starW = starCanvas.width = window.innerWidth;
@@ -12,15 +13,30 @@ export function initStarfield() {
   window.addEventListener('resize', resizeStarfield);
   resizeStarfield();
 
-  const blobCenterX = () => starW / 2;
-  const blobCenterY = () => starH / 2;
+  function updateScrollFade() {
+    const scrollY = window.scrollY;
+    const fadeStart = window.innerHeight * 0.80;
+    const fadeEnd = window.innerHeight * 1.50;
+    
+    if (scrollY < fadeStart) {
+      scrollFade = 1.0;
+    } else if (scrollY > fadeEnd) {
+      scrollFade = 0.0;
+    } else {
+      scrollFade = 1.0 - (scrollY - fadeStart) / (fadeEnd - fadeStart);
+    }
+  }
+  window.addEventListener('scroll', updateScrollFade, { passive: true });
+  updateScrollFade();
 
-  // Approximate blob screen radius from viewport and 3D radius.
-  // For your setup, radius scales roughly with min(width, height).
+  // Blob center is ALWAYS at viewport center (not affected by scroll)
+  const blobCenterX = () => starW / 2;
+  const blobCenterY = () => starH / 2 - window.scrollY;
+
   function getWarpRadius() {
     const minDim = Math.min(starW, starH);
-    const baseRadius = minDim * 0.25; // tweak: ~25% of min dimension
-    return baseRadius * STAR_CONFIG.warpRadiusFactor;
+    const baseRadius = minDim * 0.25;
+    return baseRadius * getWarpRadiusFactor();  // Use the calculated factor
   }
 
   class Star {
@@ -92,7 +108,8 @@ export function initStarfield() {
         (STAR_CONFIG.minOpacity +
           ((Math.sin(this.twinklePhase) + 1.0) * 0.5) *
             (STAR_CONFIG.maxOpacity - STAR_CONFIG.minOpacity)) *
-        fadeMultiplier;
+        fadeMultiplier *
+        scrollFade; // Apply scroll-based fade
     }
 
     draw() {

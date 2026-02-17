@@ -11,7 +11,7 @@ export const CONFIG = {
     position: { x: 0, y: 0, z: 3 },
   },
   blob: {
-    radius: 1.0,
+    radius: 0.85,
     widthSegments: 128,
     heightSegments: 128,
     noiseScale: 0.5,
@@ -31,7 +31,7 @@ export const CONFIG = {
 };
 
 export const STAR_CONFIG = {
-  starCount: 200,
+  starCount: 300,
   minSize: 0.2,
   maxSize: 1.5,
   minOpacity: 0.3,
@@ -41,5 +41,21 @@ export const STAR_CONFIG = {
   parabolicScale: 0.8,
   fillHeight: 1.8,
   warpStrength: 900,
-  warpRadiusFactor: 1.3
+};
+
+export function getWarpRadiusFactor() {
+  return CONFIG.blob.radius + 0.50;
+}
+
+export const STRIPE_CONFIG = {
+  stripeHeight: 8,        // Height in pixels
+  quantization: 2.0,      // Horizontal band steps (higher = more stripes)
+  detailX: 4.0,             // Horizontal detail/noise frequency
+  rOffset: 0.05,            // Red channel chromatic offset
+  bOffset: -0.05,           // Blue channel chromatic offset
+  animSpeed: 0.5,           // Animation speed multiplier
+  contrast: 1.3,            // Color contrast (1.0 to 2.0)
+  power: 8.0,               // Stripe sharpness (4.0 to 12.0)
+  smoothMin: 0.1,           // Smoothstep min (0.0 to 0.5)
+  smoothMax: 1.0,           // Smoothstep max (0.5 to 1.0)
 };
